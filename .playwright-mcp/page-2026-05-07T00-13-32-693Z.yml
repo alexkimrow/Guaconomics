@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "🥑 Guaconomics" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Will you afford the guac?
+    - img [ref=e9]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: Region
+        - combobox "Region" [ref=e23]:
+          - option "California" [selected]
+          - option "Texas"
+          - option "NewYork"
+          - option "Florida"
+          - option "Illinois"
+          - option "GreatLakes"
+          - option "Southeast"
+          - option "Plains"
+          - option "SouthCentral"
+          - option "Northeast"
+      - generic [ref=e24]:
+        - generic [ref=e25]: Type
+        - combobox "Type" [ref=e26]:
+          - option "Conventional" [selected]
+          - option "Organic"
+      - generic [ref=e27]:
+        - generic [ref=e28]: Size of Avocado
+        - combobox "Size of Avocado" [ref=e29]:
+          - option "Small (4046)"
+          - option "Large (4225)" [selected]
+          - option "Extra Large (4770)"
+      - generic [ref=e30]:
+        - generic [ref=e31]: Year
+        - spinbutton "Year" [ref=e32]: "2023"
+      - button "Predict the Guac →" [ref=e33] [cursor=pointer]
+    - generic [ref=e34]:
+      - heading "📊 About the Model" [level=3] [ref=e35]
+      - list [ref=e36]:
+        - listitem [ref=e37]:
+          - strong [ref=e38]: "Dataset:"
+          - text: Hass Avocado Board, 2015–2023
+          - text: 18,249 records across 54 US regions
+        - listitem [ref=e39]:
+          - strong [ref=e40]: "Model:"
+          - text: Random Forest Regressor
+          - text: Trained on region, type, size, and year
+        - listitem [ref=e41]:
+          - strong [ref=e42]: "Accuracy:"
+          - text: R² = 0.65+
+          - text: RMSE = $0.22, MAE = $0.16
+      - paragraph [ref=e43]: 🎓 This is a fun educational project. Predictions are for entertainment, not investment advice!
+  - alert [ref=e44]
