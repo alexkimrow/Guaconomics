@@ -1,6 +1,6 @@
 # 🥑 Guaconomics
 
-> *An adorable avocado price predictor with ML model & interactive web UI*
+> _An adorable avocado price predictor with ML model & interactive web UI_
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)](https://www.python.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
@@ -10,6 +10,8 @@
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10%2B-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion)
 [![Flask](https://img.shields.io/badge/Flask-2.3%2B-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+<img src="docs/guaconomics-home.png" alt="Guaconomics Home" width="500"/>
 
 ## Overview
 
@@ -64,6 +66,7 @@ guaconomics/
 ## 🛠️ Tech Stack
 
 ### **Backend**
+
 - **Flask** 2.3+ — REST API framework
 - **scikit-learn** 1.3+ — Random Forest Regressor
 - **Pandas** 2.0+ — Data processing
@@ -71,12 +74,14 @@ guaconomics/
 - **NumPy** — Numerical operations
 
 ### **Frontend**
+
 - **Next.js** 14+ — React framework
 - **React** 18+ — UI components
 - **Framer Motion** 10+ — Animations & interactions
 - **Google Fonts** (Caveat, Nunito) — Typography
 
 ### **Data**
+
 - **Hass Avocado Board Dataset** — 18,249 records
 - **Time Period** — 2015-2023
 - **Regions** — 54 US regions
@@ -85,6 +90,7 @@ guaconomics/
 ## 🚀 Quick Start
 
 ### **Prerequisites**
+
 - Python 3.8+
 - Node.js 18+
 - npm or yarn
@@ -127,15 +133,15 @@ python src/download_dataset.py
 
 ## 📊 Model Performance
 
-| Metric | Value |
-|--------|-------|
-| **Algorithm** | Random Forest Regressor |
-| **R² Score** | 0.65+ |
-| **RMSE** | $0.22 |
-| **MAE** | $0.16 |
-| **Features** | 12 (region, type, size, year, volumes, bags) |
-| **Training Data** | 14,599 records (80%) |
-| **Test Data** | 3,650 records (20%) |
+| Metric            | Value                                        |
+| ----------------- | -------------------------------------------- |
+| **Algorithm**     | Random Forest Regressor                      |
+| **R² Score**      | 0.65+                                        |
+| **RMSE**          | $0.22                                        |
+| **MAE**           | $0.16                                        |
+| **Features**      | 12 (region, type, size, year, volumes, bags) |
+| **Training Data** | 14,599 records (80%)                         |
+| **Test Data**     | 3,650 records (20%)                          |
 
 ## 🎯 Model Features
 
@@ -150,12 +156,14 @@ The model uses these inputs to predict avocado price:
 ## 🎨 UI Highlights
 
 ### Color Palette
+
 - **Background** — `#fdf6e3` (warm parchment)
 - **Primary Green** — `#5a7a3a` (dark avocado)
 - **Accent Green** — `#8db85c` (fresh flesh)
 - **Brown** — `#7c5c3a` (pit)
 
 ### Animations
+
 - **Floating Mascot** — Gentle up-down bob (CSS keyframes)
 - **Form Fields** — Staggered fade-in on mount (Framer Motion)
 - **Submit Button** — Scale on hover/tap
@@ -164,26 +172,23 @@ The model uses these inputs to predict avocado price:
 
 ### Price Tiers & Verdicts
 
-| Price Range | Tier | Emoji | Verdict |
-|---|---|---|---|
-| < $0.80 | Budget Guac | 💸 | "Your wallet survives another day." |
-| $0.80–$1.20 | Reasonable | 👍 | "Guac is extra, but you can handle it." |
-| $1.20–$1.60 | Pricey | 😬 | "Maybe skip the guac this time." |
-| > $1.60 | Splurge Zone | 🤑 | "This avocado has a mortgage." |
+| Price Range | Tier         | Emoji | Verdict                                 |
+| ----------- | ------------ | ----- | --------------------------------------- |
+| < $0.80     | Budget Guac  | 💸    | "Your wallet survives another day."     |
+| $0.80–$1.20 | Reasonable   | 👍    | "Guac is extra, but you can handle it." |
+| $1.20–$1.60 | Pricey       | 😬    | "Maybe skip the guac this time."        |
+| > $1.60     | Splurge Zone | 🤑    | "This avocado has a mortgage."          |
 
-## 📸 Screenshots
-
-### Home Page
-<img src="docs/screenshot-home.png" alt="Guaconomics Home" width="500"/>
-
-*Animated header, cute avocado mascot, and prediction form*
+_Animated header, cute avocado mascot, and prediction form_
 
 ## 🔌 API Endpoints
 
 ### `POST /predict`
+
 Predict avocado price
 
 **Request:**
+
 ```json
 {
   "size": "Large",
@@ -195,6 +200,7 @@ Predict avocado price
 ```
 
 **Response:**
+
 ```json
 {
   "price": 1.324
@@ -202,9 +208,11 @@ Predict avocado price
 ```
 
 ### `GET /health`
+
 Health check
 
 **Response:**
+
 ```json
 {
   "status": "ok"
@@ -228,7 +236,7 @@ npm run lint
 
 1. **Download** — Hass Avocado Board dataset (18K+ records)
 2. **Load & Inspect** — Check for missing values, data types
-3. **Encode** — 
+3. **Encode** —
    - One-Hot encoding for type (conventional/organic)
    - Target encoding for region (mean price per region)
 4. **Feature Engineering** — Create year feature from date
@@ -243,12 +251,14 @@ See `src/notebooks/01_train_model.ipynb` for full pipeline.
 ## 🚢 Deployment
 
 ### **Backend** (Flask API)
+
 - Deploy to [Render](https://render.com) or [Railway](https://railway.app)
-- Requires `Procfile`: `web: python api.py`
+- Requires `Profile`: `web: python api.py`
 - Set `PORT` env var: `port = int(os.environ.get("PORT", 5000))`
 - Note: Model file (122MB) needs Git LFS or direct inclusion
 
 ### **Frontend** (Next.js)
+
 - Deploy to [Vercel](https://vercel.com) (recommended)
 - Set `NEXT_PUBLIC_API_URL` env var to backend URL
 - `npm run build && npm start` for self-hosted
@@ -263,7 +273,7 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 ## 👨‍💻 Author
 
-**Alex Kim** — [GitHub](https://github.com/alexkimrow) | [Email](mailto:roalex1995@gmail.com)
+**Alex Ro** — [GitHub](https://github.com/alexkimrow) | [Email](mailto:alexkimro@gmail.com)
 
 ---
 
