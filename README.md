@@ -11,7 +11,9 @@
 [![Flask](https://img.shields.io/badge/Flask-2.3%2B-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-<img src="docs/guaconomics-home.png" alt="Guaconomics Home" width="500"/>
+<p align="center">
+  <img src="docs/guaconomics-home.png" alt="Guaconomics Home" width="500"/>
+</p>
 
 ## Overview
 
