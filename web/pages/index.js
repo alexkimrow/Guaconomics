@@ -91,7 +91,7 @@ export default function Home() {
             margin: '0',
           }}
         >
-          Will you afford the guac?
+          Can you afford the guac?
         </motion.p>
       </motion.div>
 
