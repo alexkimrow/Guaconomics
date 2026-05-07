@@ -11,7 +11,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load model
-with open('avocado_model_full.pkl', 'rb') as f:
+model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'avocado_model_full.pkl')
+with open(model_path, 'rb') as f:
     data = pickle.load(f)
     model = data['model']
     scaler = data['scaler']
