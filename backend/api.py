@@ -4,14 +4,32 @@ import pickle
 import numpy as np
 import pandas as pd
 import os
+import urllib.request
 
 app = Flask(__name__)
 
 # Enable CORS for all routes
 CORS(app)
 
-# Load model
-model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'avocado_model_full.pkl')
+# Resolve model path: prefer local repo copy, else download from MODEL_URL into /tmp.
+# Local dev keeps models/avocado_model_full.pkl; Render sets MODEL_URL to a public URL
+# (e.g. GitHub Release asset) since the pkl is gitignored.
+LOCAL_MODEL = os.path.join(os.path.dirname(__file__), '..', 'models', 'avocado_model_full.pkl')
+MODEL_URL = os.environ.get('MODEL_URL')
+
+if os.path.exists(LOCAL_MODEL):
+    model_path = LOCAL_MODEL
+elif MODEL_URL:
+    model_path = '/tmp/avocado_model_full.pkl'
+    if not os.path.exists(model_path):
+        print(f"Downloading model from {MODEL_URL} ...", flush=True)
+        urllib.request.urlretrieve(MODEL_URL, model_path)
+        print("Model downloaded.", flush=True)
+else:
+    raise RuntimeError(
+        f"Model not found at {LOCAL_MODEL} and MODEL_URL env var not set."
+    )
+
 with open(model_path, 'rb') as f:
     data = pickle.load(f)
     model = data['model']
